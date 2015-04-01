@@ -1,0 +1,9 @@
+br\ufpi\entidades\Usuario.class
+br\ufpi\entidades\Livro.class
+br\ufpi\managedbeans\UsuarioBean.class
+br\ufpi\managedbeans\AutorBean.class
+br\ufpi\ejbs\UsuarioEJB.class
+br\ufpi\entidades\Autor.class
+br\ufpi\extras\PasswordBean.class
+br\ufpi\ejbs\AutorEjb.class
+br\ufpi\extras\FilesystemResourceResolver.class
