@@ -6,13 +6,13 @@
 
 
 	<ui:define name="ic-user">
-		<h:graphicImage value="/icon-user-default.png" width="70px"
+		<h:graphicImage value="/icon-user-default.png" width="50px"
 			style="border-radius: 100%; border-style: solid;border-color: #000000;
  							 	border-width: 1px;" />
-		<br />
-		<p:outputLabel value="#{usuarioBean.usuarioLogado.nome}" />
-		<br />
-		<p:commandLink value="Sair" action="#{usuarioBean.logout()}"
-			style="font-size:14px;color: #0000FF !important;" />
 	</ui:define>
-	</ui:composition>
+
+	<ui:define name="inout">
+		<p:commandButton icon="ui-icon-plus" action="#{usuarioBean.logout()}"
+			value="Sair" style="font-size:13px" />
+	</ui:define>
+</ui:composition>

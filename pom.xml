@@ -59,13 +59,6 @@
 
 	<dependencies>
 
-		<dependency>
-			<groupId>net.bootsfaces</groupId>
-			<artifactId>bootsfaces</artifactId>
-			<version>0.6.0</version>
-		</dependency>
-
-
 		<!-- adiciona suporte para utilização de teste com JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -146,6 +139,13 @@
 			<artifactId>all-themes</artifactId>
 			<version>1.0.8</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.efsavage.twitter.bootstrap</groupId>
+			<artifactId>bootstrap-maven</artifactId>
+			<version>2.0.4</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.primefaces.extensions</groupId>
