@@ -1,11 +1,16 @@
 package br.ufpi.entidades;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Livro {
+public class Livro implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	private int id;
 	

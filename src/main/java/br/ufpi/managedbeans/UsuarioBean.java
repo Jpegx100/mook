@@ -77,7 +77,7 @@ public class UsuarioBean implements Serializable {
 	}
 
 	public void salvar() {
-		user.setImagem(file.getContents());
+		//user.setImagem(file.getContents());
 		uejb.salvar(user);
 		login();
 	}

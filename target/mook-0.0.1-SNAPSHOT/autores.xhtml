@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" template="index.xhtml">
+	
+	<ui:define name="inout">
+	</ui:define>
+	<ui:define name="centro">
+		<p:panel header="Autores">
+			<p:dataGrid value="#{autorBean.autores()}" var="a"
+				styleClass="datagrid">
+				<p:panel>
+					<h:form>
+						<p:panelGrid columns="3">
+							<p:outputLabel value="#{a.id}" />
+							<p:outputLabel value="#{a.nome}" />
+						</p:panelGrid>
+					</h:form>
+				</p:panel>
+			</p:dataGrid>
+		</p:panel>
+	</ui:define>
+</ui:composition>

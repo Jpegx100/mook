@@ -6,13 +6,48 @@
 
 
 	<ui:define name="ic-user">
-		<h:graphicImage value="/icon-user-default.png" width="50px"
-			style="border-radius: 100%; border-style: solid;border-color: #000000;
- 							 	border-width: 1px;" />
+		<h:graphicImage id="img" value="/icon-user-default.png" width="40px"
+			title="Perfil"
+			style="cursor:pointer;border-radius: 100%; border-style: solid;border-color: #000000; border-width: 1px;" />
+		<p:overlayPanel id="imgPanel" for="img" showEvent="mouseover"
+			hideEvent="mousedown">
+			<div align="right" style="font-size: 16px">
+				<p:panelGrid columns="1" style="text-align:right;font-size:12px">
+					<p:outputLabel value="#{usuarioBean.usuarioLogado.nome}"
+						style="font-size:16px" />
+					<p:link value="Minha Letra" styleClass="link" />
+					<p:commandLink value="Sair" styleClass="link"
+						action="#{usuarioBean.logout()}" />
+				</p:panelGrid>
+			</div>
+		</p:overlayPanel>
 	</ui:define>
-
 	<ui:define name="inout">
-		<p:commandButton icon="ui-icon-plus" action="#{usuarioBean.logout()}"
-			value="Sair" style="font-size:13px" />
+	</ui:define>
+	<ui:define name="centro">
+		<p:panel header="Cadastrar Autor">
+			<h:form>
+				<p:outputLabel value="Nome" />
+				<p:inputText value="#{autorBean.autor.nome}" />
+				<br />
+				<p:commandButton value="Salvar" action="#{autorBean.salvar()}"
+					ajax="false" />
+			</h:form>
+		</p:panel>
+		<p:panel header="Autores">
+			<p:dataGrid value="#{autorBean.autores()}" var="a"
+				styleClass="datagrid">
+				<p:panel>
+					<h:form>
+						<p:panelGrid columns="3">
+							<p:outputLabel value="#{a.id}" />
+							<p:outputLabel value="#{a.nome}" />
+							<p:commandButton icon="ui-icon-plus"
+								action="#{autorBean.excluir(a)}" ajax="false" />
+						</p:panelGrid>
+					</h:form>
+				</p:panel>
+			</p:dataGrid>
+		</p:panel>
 	</ui:define>
 </ui:composition>

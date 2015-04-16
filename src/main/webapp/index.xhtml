@@ -15,64 +15,7 @@ font-size
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -85,38 +28,17 @@ pt
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ;
 }
+.link:HOVER {
+	text-decoration: underline;
+}
+
+.link {
+	text-decoration: none;
+	font-weight: bold;
+}
+
 .clearfix:after {
 	display: block;
 	content: " ";
@@ -153,130 +75,194 @@ pt
 	width: 290px !important;
 }
 
-.ui-panelgrid td, .ui-panelgrid tr {
-	border-style: none !important
+.ui-panelgrid td, .ui-panelgrid tr , .datagrid{
+	vertical-align: top;
+	border: none !important;
 }
 
-.c1{
-	width: 20%;
-}
-.c2{
-	width: 80%;
+.c1 {
+	width: 16%;
 }
 
-.ui-separator{
+.c2 {
+	width: 74%;
+}
+
+.c3 {
+	width: 10%;
+}
+
+.ui-separator {
 	background-color: #1CBBFF;
-	border-color: none;
-	background-image: none;
+	border-color: #1CBBFF !important;
+	background-image: none !important;
+	box-shadow: none !important;
+	height: 2px;
 }
 
+.ui-menubar {
+	vertical-align: top;
+	background-image: none !important;
+	background-color: white !important;
+	box-shadow: none !important;
+	font-family: calibri !important;
+	border: none !important;
+}
+
+.ui-menuitem {
+	font-family: calibri !important;
+	font-size: 20px !important;
+}
+
+.ui-menuitem>a:HOVER {
+	background-image: none !important;
+	background-color: #1CBBFF !important;
+}
+
+.ui-menuitem:HOVER {
+	background-image: none !important;
+}
+
+.ui-menu-list {
+	border-bottom-color: #1CBBFF !important;
+	border-bottom-width: 4px;
+	border-left: none !important;
+	border-right: none !important;
+}
+
+.ui-overlaypanel {
+	border-bottom-color: #1CBBFF !important;
+	border-bottom-width: 4px;
+	border-left: none !important;
+	border-right: none !important;
+}
+
+.ui-dialog-titlebar {
+	color: white !important;
+	background: #1CBBFF !important;
+	border-bottom: 2px !important;
+}
+
+.tablehead {border ="1";
+	border-bottom: 4px solid #1CBBFF;
+}
 </style>
 </h:head>
 <h:body>
-	<div align="center">
-		<h:form>
-			<nav style="position: fixed;">
-				<p:panelGrid columns="3" columnClasses="c1,c2,c1">
-					<h:graphicImage value="/mook.png" width="100%" />
-				<p:menubar style="border:0px">
-					<p:menuitem value="Home" icon="ui-icon-home"
-						style="margint-right:50%;" />
-					<p:submenu label="Livros" icon="ui-icon-note">
-						<p:menuitem value="Lancamentos" icon="ui-icon-plus" />
-						<p:menuitem value="Criticas" icon="ui-icon-star" />
-						<p:menuitem value="Autores" icon="ui-icon-person" />
-					</p:submenu>
-
-					<p:submenu label="Sua letra" icon="ui-icon-pencil">
-						<p:menuitem value="Textos" />
-						<p:menuitem value="HQs" />
-						<p:menuitem value="Fanfics" />
-					</p:submenu>
-
-					<f:facet name="options">
-						<p:inputText placeholder="Pesquisar" size="15" />
-						<p:commandButton type="button" icon="ui-icon-search"
-							style="margin-right:3px;margin-left:3px;font-size:13px"
-							immediate="t" />
-						<ui:insert name="inout">
-							<p:commandButton icon="ui-icon-plus" onclick="PF('dlg1').show();"
-							value="Entrar" style="font-size:13px" />
-						</ui:insert>
-					</f:facet>
-				</p:menubar>
-				<ui:insert name="ic-user">
-				</ui:insert>
-				</p:panelGrid>
-				<p:separator style="height:3px;color:red" />
-			</nav>
-		</h:form>
-			
-
-		<p:panel style="height:800px">
-			<ui:insert name="centro">
-					Bem Vindo<br />
-			</ui:insert>
-		</p:panel>
-		<p:panel>
-			<table>
+	<h:form>
+		<nav
+			style="position: fixed; background-color: white; vertical-align: top">
+			<table class="tablehead">
 				<tr>
-					<td><h:graphicImage value="/ic_face.jpg" width="33px" /></td>
-					<td><h:graphicImage value="/ic_twitter.png" width="43px" /></td>
-					<td><h:graphicImage value="/ic_youtube.png" width="38px" /></td>
-					<td><h:graphicImage value="/ic_inta.png" width="33px" /></td>
+					<td width="18%">
+						<a href="index.xhtml"><h:graphicImage value="/mook.png" width="100%"
+							style="align:right" /></a>
+					</td>
+					<td style="padding-left:3%"><p:menubar>
+							<p:submenu label="Livros">
+								<p:menuitem value="Lancamentos" />
+								<p:menuitem value="Criticas" />
+								<p:menuitem value="Autores" url="/autores.xhtml"/>
+							</p:submenu>
+
+							<p:submenu label="Sua letra">
+								<p:menuitem value="Textos" />
+								<p:menuitem value="HQs" />
+								<p:menuitem value="Fanfics" />
+							</p:submenu>
+
+							<f:facet name="options">
+								<p:inputText placeholder="Pesquisar" size="15"
+									style="font-size:17px" />
+								<p:commandButton type="button" icon="ui-icon-search"
+									style="margin-right:3px;margin-left:3px;font-size:13px;background:white;border:none;
+								box-shadow: none !important;"
+									styleClass="botao" immediate="t" />
+								<ui:insert name="inout">
+									<p:commandButton icon="ui-icon-plus"
+										onclick="PF('dlg1').show();" value="Entrar"
+										style="font-size:13px" />
+								</ui:insert>
+							</f:facet>
+						</p:menubar></td>
+					<td align="left" width="5%"><ui:insert name="ic-user">
+						</ui:insert></td>
 				</tr>
 			</table>
-			<p:outputLabel value="Encontre-nos nas redes sociais!"
-				style="font-size:8pt" />
-			<p:separator />
-			<p:outputLabel value="Ultimas noticias..." />
+		</nav>
+	</h:form>
+	<div style="padding-top: 70px" align="center">
+		<p:panel style="width:90%">
+			<ui:insert name="centro">
+					Bem aVindo<br />
+					Bem aVindo<br />Bem aVindo<br />
+					Bem aVindo<br />
+					Bem aVindo<br />
+			</ui:insert>
 		</p:panel>
+	</div>
+	<div>
+<!-- 		<p:panel> -->
+<!-- 			<table> -->
+<!-- 				<tr> -->
+<!-- 					<td><h:graphicImage value="/ic_face.jpg" width="33px" /></td> -->
+<!-- 					<td><h:graphicImage value="/ic_twitter.png" width="43px" /></td> -->
+<!-- 					<td><h:graphicImage value="/ic_youtube.png" width="38px" /></td> -->
+<!-- 					<td><h:graphicImage value="/ic_inta.png" width="33px" /></td> -->
+<!-- 				</tr> -->
+<!-- 			</table> -->
+<!-- 			<p:outputLabel value="Encontre-nos nas redes sociais!" -->
+<!-- 				style="font-size:8pt" /> -->
+<!-- 			<p:separator /> -->
+<!-- 			<p:outputLabel value="Ultimas noticias..." /> -->
+<!-- 		</p:panel> -->
 		<p:separator />
 		<h:outputText value="&#169; Copyright 2015 - JPEGX"
 			style="font-size:13px" />
+
+		<p:dialog header="Entrar ou Cadastrar-se" widgetVar="dlg1"
+			minHeight="40" resizable="false" showEffect="click"
+			appendToBody="true">
+			<p:panelGrid columns="2">
+				<p:panel style="text-align:center">
+					<h:form>
+						<p:panelGrid columns="2">
+							<h:graphicImage value="/icon-user-default.png" width="20px" />
+							<p:inputText placeholder="Email"
+								value="#{usuarioBean.user.email}" />
+							<h:graphicImage value="/ic_key.png" width="20px" />
+							<p:password placeholder="Senha" value="#{usuarioBean.user.senha}" />
+						</p:panelGrid>
+						<br />
+						<p:commandButton value="Entrar" icon="ui-icon-key"
+							action="#{usuarioBean.login}" ajax="false" />
+					</h:form>
+				</p:panel>
+				<p:panel style="text-align:center">
+					<h:form>
+						<p:panelGrid columns="2">
+							<h:graphicImage value="/icon-user-default.png" width="20px" />
+							<p:inputText value="#{usuarioBean.user.nome}" placeholder="Nome" />
+
+							<h:graphicImage value="/ic_email.png" width="20px" />
+							<p:inputText value="#{usuarioBean.user.email}"
+								placeholder="Email" />
+
+							<h:graphicImage value="/ic_key.png" width="20px" />
+							<p:password value="#{usuarioBean.user.senha}" placeholder="Senha" />
+
+							<!-- 						<h:graphicImage value="/ic_key_t.png" width="20px" /> -->
+							<!-- 						<p:password id="pwd4" value="#{passwordView.password5}" -->
+							<!-- 							label="Password 2" required="true" placeholder="Redigite a Senha" /> -->
+
+						</p:panelGrid>
+						<br />
+						<p:commandButton value="Cadastrar-se" icon="ui-icon-plus"
+							action="#{usuarioBean.salvar()}" ajax="false" />
+					</h:form>
+				</p:panel>
+			</p:panelGrid>
+		</p:dialog>
 	</div>
-
-	<p:dialog header="Entrar ou Cadastrar-se" widgetVar="dlg1"
-		minHeight="40" resizable="false" showEffect="click"
-		appendToBody="true">
-		<p:panelGrid columns="2">
-			<p:panel style="text-align:center">
-				<h:form>
-					<p:panelGrid columns="2">
-						<h:graphicImage value="/icon-user-default.png" width="20px" />
-						<p:inputText placeholder="Email" value="#{usuarioBean.user.email}" />
-						<h:graphicImage value="/ic_key.png" width="20px" />
-						<p:password placeholder="Senha" value="#{usuarioBean.user.senha}" />
-					</p:panelGrid>
-					<br />
-					<p:commandButton value="Entrar" icon="ui-icon-key"
-						action="#{usuarioBean.login}" ajax="false" />
-				</h:form>
-			</p:panel>
-			<p:panel style="text-align:center">
-				<h:form>
-					<p:panelGrid columns="2">
-						<h:graphicImage value="/icon-user-default.png" width="20px" />
-						<p:inputText value="#{usuarioBean.user.nome}" placeholder="Nome" />
-
-						<h:graphicImage value="/ic_email.png" width="20px" />
-						<p:inputText value="#{usuarioBean.user.email}" placeholder="Email" />
-
-						<h:graphicImage value="/ic_key.png" width="20px" />
-						<p:password value="#{usuarioBean.user.senha}" placeholder="Senha" />
-
-						<!-- 						<h:graphicImage value="/ic_key_t.png" width="20px" /> -->
-						<!-- 						<p:password id="pwd4" value="#{passwordView.password5}" -->
-						<!-- 							label="Password 2" required="true" placeholder="Redigite a Senha" /> -->
-
-					</p:panelGrid>
-					<br />
-					<p:commandButton value="Cadastrar-se" icon="ui-icon-plus"
-						action="#{usuarioBean.salvar()}" ajax="false" />
-				</h:form>
-			</p:panel>
-		</p:panelGrid>
-	</p:dialog>
-
 </h:body>
 </html>
